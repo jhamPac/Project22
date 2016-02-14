@@ -30,15 +30,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate
     }
     
     var gameOver = false
+    var bG: SKSpriteNode?
     
     override func didMoveToView(view: SKView)
     {
         // set background
-        let background = SKSpriteNode(imageNamed: "background.jpg")
-        background.position = CGPoint(x: 512, y: 384)
-        background.blendMode = .Replace
-        background.zPosition = -1
-        addChild(background)
+        bG = self.childNodeWithName("background") as? SKSpriteNode
         
         // set label node for score
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
